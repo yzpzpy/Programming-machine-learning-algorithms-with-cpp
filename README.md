@@ -3,7 +3,7 @@ Handwritten machine learning algorithms with C++
 
 **1. gradient_descent.cpp**
 
-I used the definition method to calculate the differential of the loss function.I just used a univariate function as an example to write a gradient descent algorithm.
+I used the definition method to calculate the differential of the loss function.I just used a univariate function as an example to program a gradient descent algorithm.
 
 **2. batch_gradient_descent.cpp**
 
