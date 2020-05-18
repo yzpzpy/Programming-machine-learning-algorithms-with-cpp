@@ -16,3 +16,7 @@ Based on batch gradient descent, the number of samples used in one iteration is 
 **4. stochastic_gradient_descent.cpp**
 
 Based on mini batch gradient descent, change the number of samples used in one iteration to one.
+
+**5. logistics_regression.cpp**
+
+The sigmoid function is added on the basis of linear regression, and the optimization method uses stochastic gradient descent.

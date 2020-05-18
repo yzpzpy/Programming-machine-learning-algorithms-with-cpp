@@ -20,39 +20,6 @@ double sigmoid(double x){
     return 1/(1+exp(-x));
 }
 
-vector<double> gd(vector<vector<double>> &x,vector<double> y, double eta, int iteration, int iter_num){
-    int cnt = 1;
-    int raws = x.size();  //行
-    int cols = x[0].size(); //列
-    srand((int)time(0));
-    double start = rand()%10;
-    vector<double> w = vector<double>(cols,start);
-    double de = 1;
-    while (cnt<iteration)
-    {
-        de = 0;
-        for (int j=0;j<cols;j++){
-            double sum = 0;
-            for (int i=0;i<raws;i++){
-                sum += (y[i]-sigmoid(model(x[i],w)))*x[i][j];
-            }
-            w[j] += eta*sum;
-            de += fabs(sum);   
-        }
-        cnt++;
-        if(cnt%iter_num==0){
-            int num = w.size();
-            cout<<"iteration: "<<cnt<<": "<<"gradient: "<<de<<"\tw: ";
-            for (int i=0;i<num;i++){
-                cout<<w[i]<<"  " ;
-            }
-            cout<<endl;
-        }
-        
-    }    
-    return w;
-}
-
 vector<double> sgd(vector<vector<double>> &x,vector<double> y, double eta, int iteration, int iter_num){
     int cnt = 0;
     int raws = x.size();  //行
