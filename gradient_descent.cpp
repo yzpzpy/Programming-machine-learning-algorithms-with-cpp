@@ -59,7 +59,7 @@ double gd1(vector<vector<double>> &x_y, double eta){
         for (int i=0;i<raws;i++){
             sum += (model(x_y[i][0],w)-x_y[i][1])*x_y[i][0];
         }
-        w -= eta*sum;
+        w -= eta*sum/raws;
         cout<<cnt++<<"\tw:"<<w<<"\tder:"<<sum<<endl;
     }
 
@@ -74,7 +74,7 @@ int main(){
         x_y.push_back(item);
     }
     // double result = gd(x_y);
-    double result = gd1(x_y, 0.0001);
+    double result = gd1(x_y, 0.001);
     cout<<result<<endl;
 
     system("pause");

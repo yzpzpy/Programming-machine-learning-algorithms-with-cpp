@@ -74,7 +74,7 @@ int main(){
         y.push_back(model(item,target));
     }
     // train
-    vector<double> result = gd(x, y, 0.001, 5000, 1000);
+    vector<double> result = gd(x, y, 0.001, 5000, 100);
     cout<<"target: "<<endl;
     for (int i=0;i<num;i++){
     cout<<target[i]<<" ";

@@ -37,7 +37,7 @@ vector<double> gd(vector<vector<double>> &x,vector<double> y, double eta, int it
                 ++num;
                 sum += (model(x[i],w)-y[i])*x[i][j];
             }
-            w[j] -= eta*sum;
+            w[j] -= eta*sum/batch;
             de += fabs(sum);   
         }
         cnt++;
@@ -76,7 +76,7 @@ int main(){
         y.push_back(model(item,target));
     }
     // train
-    vector<double> result = gd(x, y, 0.00001, 5000, 1000, 50);
+    vector<double> result = gd(x, y, 0.01, 5000, 1000, 50);
     cout<<"target: "<<endl;
     for (int i=0;i<num;i++){
     cout<<target[i]<<" ";
